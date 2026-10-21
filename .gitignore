@@ -1,0 +1,20 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Dependencies / build (if added later)
+node_modules/
+dist/
+.env
+.env.*
+
+# Large raw media should not be committed; keep web-optimized files only
+*.wav
+*.aiff
+*.psd
