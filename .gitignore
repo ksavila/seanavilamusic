@@ -14,7 +14,5 @@ dist/
 .env
 .env.*
 
-# Large raw media should not be committed; keep web-optimized files only
-*.wav
-*.aiff
+# Raw design files; commit web-ready images only
 *.psd
