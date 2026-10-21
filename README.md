@@ -51,6 +51,7 @@ Then visit http://localhost:8000.
 
 ## Photos
 
-Current photos are 640px wide and carry the photographer's watermark. Ask Kendal
-Huntsman Photography for full-resolution, unwatermarked files when possible; drop
-them into `assets/images/` with the same filenames and nothing else needs to change.
+`assets/images/` holds only web-sized copies: the hero background at 1920px wide,
+the two portraits at 720px wide, and a 1200 by 630 link-preview image. Full-resolution
+originals live in `assets/originals/`, which git ignores, so they stay local and never
+get served.

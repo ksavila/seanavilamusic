@@ -16,3 +16,6 @@ dist/
 
 # Raw design files; commit web-ready images only
 *.psd
+
+# Full-resolution photo originals stay local; the web-sized copies live in assets/images
+assets/originals/

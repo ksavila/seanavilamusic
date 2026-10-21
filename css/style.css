@@ -159,42 +159,35 @@ h3 { font-size: var(--text-lg); font-family: var(--font-body); font-weight: 700;
 
 /* ---------- Hero ---------- */
 .hero {
+  /* The full band at the corral carries the hero. The wash stays light over
+     the band and only turns solid across the bottom third, where the text
+     sits over bare dirt, so Sean and the band stay visible. */
   background:
-    radial-gradient(70% 60% at 85% 20%, rgba(168, 73, 42, 0.22), transparent 70%),
-    var(--ink);
+    linear-gradient(to top, var(--ink) 0%, rgba(21, 17, 14, 0.88) 22%, rgba(21, 17, 14, 0.45) 48%, rgba(21, 17, 14, 0.18) 100%),
+    url("../assets/images/background.jpg") center 25% / cover no-repeat var(--ink);
   border-bottom: 1px solid var(--ink-line);
-}
-.hero-inner {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: center;
-  padding-block: 3rem 3.5rem;
+  align-items: end;
+  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100svh - var(--header-h));
 }
-.hero-text { display: grid; gap: 1.25rem; min-width: 0; }
-.hero-text h1 { margin-top: -0.25rem; }
-.hero-photo {
-  position: relative;
-  order: -1; /* phones and tablets: photo first, then the name and buttons */
-  width: 100%;
-  max-width: 40rem;
-  justify-self: center;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+.hero-inner { padding-block: 4rem 3.5rem; }
+.hero-text { display: grid; gap: 1.1rem; max-width: 46rem; min-width: 0; }
+.hero-text h1 {
+  font-size: clamp(3rem, 6.5vw, 5.75rem);
+  text-shadow: 0 2px 24px rgba(21, 17, 14, 0.8);
 }
-.hero-photo::after {
-  /* A rust pipe-rail along the top edge, like the fence in the photo. */
-  content: ""; position: absolute; left: 0; right: 0; top: 0;
-  height: 6px; background: var(--rust);
-}
-@media (min-width: 56em) {
-  .hero-inner {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-    gap: 3.5rem;
-    padding-block: 4.5rem 5rem;
+.hero-text .lede { text-shadow: 0 1px 12px rgba(21, 17, 14, 0.9); }
+@media (max-width: 40em) {
+  /* Phones: the header is not sticky, so the hero fills the first screen
+     below the two-line header (6.75rem). */
+  .hero {
+    min-height: calc(100vh - 6.75rem);
+    min-height: calc(100svh - 6.75rem);
+    background-position: center 15%;
   }
-  .hero-photo { order: 0; justify-self: end; }
+  .hero-inner { padding-block: 3rem 2.5rem; }
+  .hero-text .lede { font-size: var(--text-base); }
 }
 
 /* ---------- Sections ---------- */
