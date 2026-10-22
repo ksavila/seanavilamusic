@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>document.documentElement.className += ' js';</script>
   <title>Sean Avila | Country Music</title>
   <meta name="description" content="Official site of country music artist Sean Avila. Listen to his music, see upcoming show dates, and follow along on Instagram.">
 
@@ -89,29 +90,18 @@
         <p class="section-intro">Where to catch Sean live. Dates are added here as soon as they are confirmed.</p>
       </div>
 
-      <ol class="shows-list">
+      <!--
+        Show dates are loaded from a Google Sheet by js/shows.js. To add or
+        change a date, edit the sheet; nothing in this file needs to change.
+        The script sets data-shows on this section to one of loading, ready,
+        empty or error, and the CSS shows the matching block below. Without
+        JavaScript, only the "No shows" block is visible.
+      -->
+      <ol class="shows-list"></ol>
 
-        <!--
-          EXAMPLE SHOW ROW. To add a date, copy everything from <li> to </li>,
-          paste it below this comment (outside the comment markers), and edit.
-          Delete the "shows-empty" block once you have at least one date.
+      <p class="shows-status shows-loading" role="status">Checking for upcoming dates&hellip;</p>
 
-        <li class="show">
-          <div class="show-date">
-            <span class="show-month">Nov</span>
-            <span class="show-day">14</span>
-          </div>
-          <div class="show-info">
-            <h3 class="show-venue">The Saddle Rack</h3>
-            <p class="show-place">Fremont, California &middot; 8:00 PM</p>
-          </div>
-          <div class="show-action">
-            <a class="button button-small" href="https://example.com/tickets" target="_blank" rel="noopener">Tickets</a>
-          </div>
-        </li>
-        -->
-
-      </ol>
+      <p class="shows-status shows-error" role="status">Show dates couldn&rsquo;t be loaded right now. <a href="https://www.instagram.com/seansacoustics/" target="_blank" rel="noopener">Check Instagram</a> for the latest.</p>
 
       <div class="shows-empty">
         <p class="shows-empty-title">No shows on the calendar right now.</p>
@@ -156,5 +146,6 @@
   </div>
 </footer>
 
+  <script src="js/shows.js" defer></script>
 </body>
 </html>

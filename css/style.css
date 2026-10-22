@@ -256,6 +256,14 @@ h3 { font-size: var(--text-lg); font-family: var(--font-body); font-weight: 700;
   border: 1px dashed var(--dust-deep);
   border-radius: var(--radius);
 }
+/* Shows section states, set by js/shows.js via data-shows on the section.
+   Without JavaScript there is no .js class, so only .shows-empty is visible. */
+.shows-status { display: none; color: var(--ink-raised); }
+.js .shows-empty { display: none; }
+.js .shows-loading { display: block; }
+[data-shows]:not([data-shows="loading"]) .shows-loading { display: none; }
+[data-shows="error"] .shows-error { display: block; }
+[data-shows="empty"] .shows-empty { display: grid; }
 .shows-empty-title { font-weight: 700; font-size: var(--text-lg); }
 .shows-empty .button { margin-top: 0.5rem; }
 
